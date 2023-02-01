@@ -36,15 +36,16 @@ function playRound(playerChoice, compChoice) {
 }
 
 
-function game() { 
-    for (let x = 0; x < 5; ++x) {
+function game(number) { 
+    for (let x = 0; x < number; ++x) {
         playRound();
     } console.log(`Final score for the player is ${playerscore} and for the computer ${computerscore}.`);
     if (playerscore > computerscore) {
         console.log("Final winner is the player!");
-    } else if (playerscore < computer) {
+    } else if (playerscore < computerscore) {
         console.log("Final winner is the computer!");
     } else {
-        console.log("Nobody won as it's a tie!");
+        console.log("Second round required as it is a tie!");
+        game(5);
     }
 }
